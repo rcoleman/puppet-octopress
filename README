@@ -1,0 +1,41 @@
+rcoleman-octopress
+==================
+
+This Octopress module is currently limited in functionality but will install Ruby 1.9.3 via RBENV, clone Octopress and install gems via bunlder for the Octopress user.
+
+The most basic usage is to just include the octopress class.
+
+`include octopress`
+
+If you'd like to specify your own Octopress repo to clone from, try this.
+
+`
+class { 'octopress':  
+  source_code => 'git://github.com/yourID/octopress.git',  
+}  
+`
+
+Class Parameters
+================
+  $param        | value,[default_vaule] - explanation
+  $manage_ruby  | [true],false - sets whether RBENV takes over and compiles Ruby
+  $ruby_version | [1.9.3-p327],string - Which Ruby version to setup
+  $user         | [octopress],string - Which user to setup Ruby for
+  $home         | [/home/octopress],string - The users home directory
+  $install_dir  | ['/opt/octopress'],string - Where to deploy Octopress
+  $source_code  | ['git://github.com/imathis/octopress.git'],string - Where to get the Octopress source from
+
+
+Platform Support
+================
+This module has received minimal testing on CentOS 6. It should support most platform but that support depends on underlying modules.
+
+
+TODO
+====
+
+* `bundle install` isn't handled if the module doesn't manage Ruby
+* This module needs rspec-puppet tests
+* Decide if the module should wrap around various rake tasks for managing the blog
+* Validate user input
+* Manage plugins, themes and other content, probably as defined resource types
