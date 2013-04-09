@@ -1,13 +1,13 @@
 ---
-language: java
+language: ruby
 notifications:
  email:
    on_success: never
    on_failure: always
 script:
-- git clone -q git://github.com/puppetlabs/ghpublisher.git .forge-releng
+- git clone -q git://github.com/cloudsmith/ghpublisher.git .forge-releng
 - .forge-releng/publish
 env:
  global:
   - PUBLISHER_LOGIN=rcoleman
-  - secure: "XHHOkIpLKQe4Dz9pafncz1nlvok+B+iZs7H0nLvYKO5aJ3l7ZOvt8IjubMXV\nZZjDJAyBgDF2L/WWvWCIijjIvJJ5rmSbhEpgWm18w+nnlaRePyNOvIfq9iOA\nADbs2y4aqqtcdZ/LEkMV5R/HHL3BkbjTv9S7KewO6459DQTT+Pc="
+#  - secure: "XHHOkIpLKQe4Dz9pafncz1nlvok+B+iZs7H0nLvYKO5aJ3l7ZOvt8IjubMXV\nZZjDJAyBgDF2L/WWvWCIijjIvJJ5rmSbhEpgWm18w+nnlaRePyNOvIfq9iOA\nADbs2y4aqqtcdZ/LEkMV5R/HHL3BkbjTv9S7KewO6459DQTT+Pc="
